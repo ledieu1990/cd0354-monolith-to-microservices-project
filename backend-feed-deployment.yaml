@@ -19,6 +19,14 @@ spec:
           image: sunnylee1905/udagram-api-feed:v5
           ports:
             - containerPort: 80
+          imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "1024Mi"
+              cpu: "500m"
           env:
             - name: POSTGRES_USERNAME
               valueFrom:
@@ -69,6 +77,7 @@ spec:
             - name: aws-secret
               mountPath: "/root/.aws/"
               readOnly: true
+      restartPolicy: Always
       volumes:
         - name: aws-secret
           secret:
