@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: reverseproxy
-          image: sunnylee1905/reverseproxy:v3
+          image: sunnylee1905/reverseproxy:v5
           ports:
             - containerPort: 8080

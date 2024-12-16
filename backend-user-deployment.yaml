@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: backend-user
-          image: sunnylee1905/udagram-api-user:v3
+          image: sunnylee1905/udagram-api-user:v5
           ports:
             - containerPort: 80
           env:
@@ -65,13 +65,11 @@ spec:
                 configMapKeyRef:
                   name: my-config
                   key: URL
-            - name: aws_access_key_id
-              valueFrom:
-                secretKeyRef:
-                  name: aws-secret
-                  key: aws_access_key_id
-            - name: aws_secret_access_key
-              valueFrom:
-                secretKeyRef:
-                  name: aws-secret
-                  key: aws_secret_access_key
+          volumeMounts:
+            - name: aws-secret
+              mountPath: "/root/.aws/"
+              readOnly: true
+      volumes:
+        - name: aws-secret
+          secret:
+            secretName: aws-secret

@@ -4,10 +4,10 @@ metadata:
   name: my-config
 data:
   # Key-value pairs for configuration
-  POSTGRES_HOST: POSTGRES_HOST
-  POSTGRES_DB: POSTGRES_DB
-  AWS_BUCKET: AWS_BUCKET
-  AWS_REGION: AWS_REGION
+  POSTGRES_HOST: database-1.cwskq5sfurop.us-east-1.rds.amazonaws.com
+  POSTGRES_DB: postgres
+  AWS_BUCKET: udacity-cd-m2m-575867770725
+  AWS_REGION: us-east-1
   AWS_PROFILE: default
   JWT_SECRET: testing
-  URL: http://localhost:8100
+  URL: http://a358aba8fa6794f21b706804625be6ef-1191462312.us-east-1.elb.amazonaws.com:8100
