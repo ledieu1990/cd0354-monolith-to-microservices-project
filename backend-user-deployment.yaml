@@ -15,28 +15,19 @@ spec:
         app: backend-user
     spec:
       containers:
-        - name: backend-user
-          image: sunnylee1905/udagram-api-user:v5
-          ports:
-            - containerPort: 80
+        - image: sunnylee1905/udagram-api-user:v5
+          name: backend-user
           imagePullPolicy: Always
-          resources:
-            requests:
-              memory: "64Mi"
-              cpu: "250m"
-            limits:
-              memory: "1024Mi"
-              cpu: "500m"
           env:
             - name: POSTGRES_USERNAME
               valueFrom:
                 secretKeyRef:
-                  name: my-secret
+                  name: env-secret
                   key: POSTGRES_USERNAME
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: my-secret
+                  name: env-secret
                   key: POSTGRES_PASSWORD
             - name: POSTGRES_DB
               valueFrom:

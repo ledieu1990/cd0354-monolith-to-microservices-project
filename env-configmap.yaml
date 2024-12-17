@@ -10,4 +10,4 @@ data:
   AWS_REGION: us-east-1
   AWS_PROFILE: default
   JWT_SECRET: testing
-  URL: http://a358aba8fa6794f21b706804625be6ef-1191462312.us-east-1.elb.amazonaws.com:8100
+  URL: http://ac657688f7a5c41d1ab95ab979993441-29997692.us-east-1.elb.amazonaws.com:8100
